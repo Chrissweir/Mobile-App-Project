@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     {
         InvokeRepeating("AddOne", 4f, 6f);
     }
-    
+
     void AddOne()
     {
         points += 1;

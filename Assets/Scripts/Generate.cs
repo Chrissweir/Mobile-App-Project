@@ -9,6 +9,7 @@ public class Generate : MonoBehaviour
     {
         InvokeRepeating("CreateObstacle", 1f, 1.5f);
     }
+    
 
     void CreateObstacle()
     {

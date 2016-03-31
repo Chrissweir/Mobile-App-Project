@@ -12,9 +12,11 @@ public class Player : MonoBehaviour
     public bool alive = true;
     public int points= 0;
     public int score;
-
+    public float volume = 1.0f;
     void Start()
     {
+        volume = PlayerPrefs.GetFloat("Audio Volume", volume);
+        AudioListener.volume = volume;
         InvokeRepeating("AddOne", 4f, 6f);
     }
 

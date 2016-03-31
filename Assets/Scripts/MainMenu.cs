@@ -51,9 +51,9 @@ public class MainMenu : MonoBehaviour
         Application.LoadLevel(Leaderboards);
     }
 
-    public void Options(string Options)
+    public void Settings(string Settings)
     {
-        Application.LoadLevel(Options);
+        Application.LoadLevel(Settings);
     }
 
     public void Exit(string MainScene)

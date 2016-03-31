@@ -15,7 +15,7 @@ public class Settings : MonoBehaviour {
 	
 	}
 
-    private void options()
+    public void options()
     {
         volume = GUILayout.HorizontalSlider(volume, 0.0f, 1.0f);
         AudioListener.volume = volume;

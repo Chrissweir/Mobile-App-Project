@@ -1,14 +1,15 @@
-﻿using UnityEngine;
+﻿//Reference for this code - http://wiki.unity3d.com/index.php?title=Server_Side_Highscores
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
-public class Leaderboards : MonoBehaviour {
-
-    private string highscoreURL = "http://chrisweir.cloudapp.net/display.php";
+public class Leaderboards : MonoBehaviour // Leaderboard script
+{
+    private string highscoreURL = "http://chrisweir.cloudapp.net/display.php"; //URL to my php script on my server to interact with my database
     public GameObject scoreList;
    
-    // Use this for initialization
-    void Start () {
+    void Start ()
+    {
         StartCoroutine(HighScoreMenu());
 	}
 
@@ -29,8 +30,8 @@ public class Leaderboards : MonoBehaviour {
             }
     }
 
-    public void BackButton(string StartMenu)
-    {
+    public void BackButton(string StartMenu) // Back button to go back to the main  menu
+    { 
         Application.LoadLevel(StartMenu);
     }
 }

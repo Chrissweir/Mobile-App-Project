@@ -2,7 +2,6 @@
 using System.Collections;
 using UnityEngine;
 
-
 public class Player : MonoBehaviour
 {
     // The force which is added when the player jumps
@@ -13,13 +12,15 @@ public class Player : MonoBehaviour
     public int points= 0;
     public int score;
     public float volume = 1.0f;
+
     void Start()
     {
-        volume = PlayerPrefs.GetFloat("Audio Volume", volume);
+        volume = PlayerPrefs.GetFloat("Audio Volume", volume); //Get volume level from the settings menu
         AudioListener.volume = volume;
         InvokeRepeating("AddOne", 4f, 6f);
     }
 
+    //Increase the points 
     void AddOne()
     {
         points += 1;
@@ -28,9 +29,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         score += points;
-        PlayerPrefs.SetInt("Player Score", score);
+        PlayerPrefs.SetInt("Player Score", score); // Save players score to Playerprefs to use in other scene
+
         // Jump
         if (Input.GetKeyUp("space") || (Input.GetMouseButtonDown(0)))
         {
@@ -67,7 +68,7 @@ public class Player : MonoBehaviour
         }
         if (isDead==true)
         {
-            Application.LoadLevel("DeathScene");
+            Application.LoadLevel("DeathScene"); //Load DeathScene when player dies
             isDead = false;
         }
     }

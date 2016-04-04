@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Death : MonoBehaviour {
 
     private string secretKey = "Jasmin"; // Edit this value and make sure it's the same as the one stored on the server
-    public string addScoreURL = "http://chrisweir.cloudapp.net/addscore.php?"; //be sure to add a ? to your url
+    public string addScoreURL = "http://chrisweir.cloudapp.net/addscore.php?"; //URL to my php script on my server to interact with my database
     public string playerName = "";
     public int score;
     public InputField Field;
@@ -14,16 +14,16 @@ public class Death : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        score = PlayerPrefs.GetInt("Player Score", score);
+        score = PlayerPrefs.GetInt("Player Score", score); //Get score from other scene
     }
 
     public void SubmitScore()
     {
         StartCoroutine(PostScores(playerName, score));
-        Field.gameObject.SetActive(false);
-        Submit.gameObject.SetActive(false);
+        Field.gameObject.SetActive(false);//input fields disappears when submit button is clicked
+        Submit.gameObject.SetActive(false);//Submit button disappears when its clicked
     }
-
+    //Button and inputfield to submit score 
     public void SubmitButton()
     {
         playerName = Field.text;

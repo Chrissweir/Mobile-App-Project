@@ -2,8 +2,9 @@
 using System.Collections;
 using System.IO;
 
-public class MainMenu : MonoBehaviour
+public class MainMenu : MonoBehaviour //Main menu script for starting, exiting, viewing leaderboards, changing settings
 {
+    //Md5 encryption
     public string Md5Sum(string strToEncrypt)
     {
         System.Text.UTF8Encoding ue = new System.Text.UTF8Encoding();
@@ -23,39 +24,32 @@ public class MainMenu : MonoBehaviour
 
         return hashString.PadLeft(32, '0');
     }
-    // Use this for initialization
-    void Start ()
-    {
-	
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-	
-	}
-    
 
+    //Start Button
     public void StartButton(string MainScene)
     {
         Application.LoadLevel(MainScene);
     }
 
+    //Main menu Button
     public void MainButton(string StartMenu)
     {
         Application.LoadLevel(StartMenu);
     }
 
+    //Leaderboards Button
     public void Leaderboards(string Leaderboards)
     {
         Application.LoadLevel(Leaderboards);
     }
 
+    //Setting Button
     public void Settings(string Settings)
     {
         Application.LoadLevel(Settings);
     }
 
+    //Exit Button
     public void Exit(string MainScene)
     {
         Application.Quit();

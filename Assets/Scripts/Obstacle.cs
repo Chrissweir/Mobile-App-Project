@@ -5,7 +5,7 @@ public class Obstacle : MonoBehaviour
     public Vector2 velocity = new Vector2(-4, 0);
     public float range = 4;
 
-    // Use this for initialization
+    //Randon Spawning of obstacles
     void Start()
     {
         GetComponent<Rigidbody2D>().velocity = velocity;

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Generate : MonoBehaviour
+public class Generate : MonoBehaviour //Class for generating the rock obstacle game objects
 {
     public GameObject rocks;
 
@@ -9,7 +9,6 @@ public class Generate : MonoBehaviour
     {
         InvokeRepeating("CreateObstacle", 1f, 1.5f);
     }
-    
 
     void CreateObstacle()
     {

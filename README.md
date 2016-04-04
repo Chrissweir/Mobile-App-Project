@@ -8,6 +8,6 @@
 ######http://wiki.unity3d.com/index.php?title=Server_Side_Highscores
 ######http://anwell.me/articles/unity3d-flappy-bird/
 
-####I designed this game based on the popular flappy bird game and copter game! The game starts off on the main menu with options to start the game, check global leaderboards, change settings, and exit the game. As you play your score increases and when the game ends you have an option to submit your score to the leaderboard.
+####I designed this game based on the popular flappy bird game and copter game! The game starts off on the main menu with options to start the game, check global leaderboards, change settings, and exit the game. As you play your score increases and when the game ends you have an option to submit your score to the leaderboard. This leaderboard is stored on a database located on a virtual machine and communicates with the game through php, sql and WWW class in the UnityEngine. There is also a local high score for the player to keep track of their high score.
 
 

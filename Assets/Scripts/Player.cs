@@ -11,11 +11,14 @@ public class Player : MonoBehaviour
     public bool alive = true;
     public int points= 0;
     public int score;
+    public int highScore;
     public float volume = 1.0f;
 
     void Start()
     {
         volume = PlayerPrefs.GetFloat("Audio Volume", volume); //Get volume level from the settings menu
+        highScore =PlayerPrefs.GetInt("High Score", highScore);
+
         AudioListener.volume = volume;
         InvokeRepeating("AddOne", 4f, 6f);
     }
@@ -31,6 +34,11 @@ public class Player : MonoBehaviour
     {
         score += points;
         PlayerPrefs.SetInt("Player Score", score); // Save players score to Playerprefs to use in other scene
+        if (score >= highScore)
+        {
+            highScore = score;
+            PlayerPrefs.SetInt("High Score", highScore);
+        }
 
         // Jump
         if (Input.GetKeyUp("space") || (Input.GetMouseButtonDown(0)))
@@ -65,6 +73,7 @@ public class Player : MonoBehaviour
         {
             GUI.color = Color.black;
             GUILayout.Label(" Score: " + score.ToString());
+            GUILayout.Label(" High Score: " + highScore.ToString());
         }
         if (isDead==true)
         {

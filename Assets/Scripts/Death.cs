@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Death : MonoBehaviour {
 
     private string secretKey = "Jasmin"; // Edit this value and make sure it's the same as the one stored on the server
-    public string addScoreURL = "http://chrisweir.cloudapp.net/addscore.php?"; //URL to my php script on my server to interact with my database
+    public string addScoreURL = "http://chrissweir.cloudapp.net/addscore.php?"; //URL to my php script on my server to interact with my database
     public string playerName = "";
     public int score;
     public InputField Field;

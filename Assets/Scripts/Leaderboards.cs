@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Leaderboards : MonoBehaviour // Leaderboard script
 {
-    private string highscoreURL = "http://chrisweir.cloudapp.net/display.php"; //URL to my php script on my server to interact with my database
+    private string highscoreURL = "http://chrissweir.cloudapp.net/display.php"; //URL to my php script on my server to interact with my database
     public GameObject scoreList;
    
     void Start ()
